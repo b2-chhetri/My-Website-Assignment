@@ -1,14 +1,11 @@
 /* styles.css */
-
 :root {
     --primary-color: #2a2a2a;
     --accent-color: #00ff9d;
-    --text-color: #333;
     --background-color: #f4f4f4;
     --card-background: #ffffff;
 }
 
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -16,228 +13,94 @@
 }
 
 body {
-    font-family: 'Futura PT', 'Segoe UI', sans-serif;
+    font-family: 'Futura PT', sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
     background-color: var(--background-color);
-}
-
-/* Navigation Styles */
-.floating-nav {
-    position: fixed;
-    top: 50%;
-    right: 2rem;
-    transform: translateY(-50%);
-    z-index: 100;
-}
-
-.floating-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-.floating-nav a {
-    display: block;
     color: var(--primary-color);
-    text-decoration: none;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-    text-align: center;
-    line-height: 1rem;
-    transition: all 0.3s ease;
 }
 
-.floating-nav a:hover, .floating-nav a.active {
-    background: var(--accent-color);
-    color: white;
-    transform: scale(1.1);
-}
-
-/* Typography Systems Grid */
-.typography-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
-}
-
-/* Typography Card Styles */
-.typo-card {
-    background: var(--card-background);
-    border-radius: 15px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.typo-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.typo-header h3 {
-    color: var(--accent-color);
-    margin: 0;
-}
-
-.typo-example {
-    background: #f8f8f8;
-    border-radius: 8px;
-    height: 200px;
-    width: 200px;
-    margin: 1rem auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #eee;
-}
-
-/* Individual Typography System Styles */
-
-/* Axial System */
-.axial-layout {
-    transform: rotate(-15deg);
-}
-
-.axial-layout span {
-    display: block;
-    margin: 5px 0;
-}
-
-/* Radial System */
-.radial-layout svg {
-    width: 100%;
-    height: 100%;
-}
-
-.radial-layout text {
-    font-size: 12px;
-    fill: currentColor;
-}
-
-/* Dilatational System */
-.dilatational-layout span {
-    position: absolute;
-    transform: scale(var(--scale));
-    transition: transform 0.3s ease;
-}
-
-/* Random System */
-.random-layout span {
-    position: absolute;
-    transform: rotate(var(--rotation));
-}
-
-/* Grid System */
-.grid-layout {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    padding: 20px;
-}
-
-/* Modular System */
-.modular-layout {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
-}
-
-/* Transitional System */
-.transitional-layout span {
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-/* Bilateral System */
-.bilateral-layout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
+.main-nav {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--card-background);
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 1000;
 }
 
-.modal-content {
-    position: relative;
-    background: white;
-    margin: 15% auto;
-    padding: 20px;
-    width: 80%;
-    max-width: 500px;
-    border-radius: 15px;
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
 }
 
-.close {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    font-size: 28px;
+.main-nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+main {
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 2rem;
+}
+
+.project-card {
+    background: var(--card-background);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.typography-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.system-card {
+    background: var(--card-background);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.system-image {
+    margin: 1rem 0;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.system-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.expand-btn {
     cursor: pointer;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
 }
 
-/* Responsive Design */
+.expand-btn:hover {
+    transform: scale(1.1);
+}
+
 @media (max-width: 768px) {
-    .floating-nav {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        top: auto;
-        transform: none;
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
     }
-
-    .floating-nav ul {
-        display: flex;
-        justify-content: space-around;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 1rem;
-    }
-
+    
     .typography-grid {
         grid-template-columns: 1fr;
     }
-
-    .typo-example {
-        width: 100%;
-        height: 180px;
-    }
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideIn {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease forwards;
-}
-
-.slide-in {
-    animation: slideIn 0.5s ease forwards;
 }

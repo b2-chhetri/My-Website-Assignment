@@ -2,6 +2,7 @@
 :root {
     --primary-color: #2a2a2a;
     --accent-color: #00ff9d;
+    --text-color: #333;
     --background-color: #f4f4f4;
     --card-background: #ffffff;
 }
@@ -15,92 +16,349 @@
 body {
     font-family: 'Futura PT', sans-serif;
     line-height: 1.6;
+    color: var(--text-color);
     background-color: var(--background-color);
-    color: var(--primary-color);
 }
 
-.main-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: var(--card-background);
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
-}
-
-.main-nav ul {
+.hero {
+    height: 100vh;
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
     display: flex;
+    align-items: center;
     justify-content: center;
-    list-style: none;
-    gap: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.main-nav a {
-    text-decoration: none;
-    color: var(--primary-color);
+.hero-content {
+    color: white;
+    z-index: 1;
+}
+
+.glitch {
+    font-size: 4rem;
     font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0.05em 0 0 var(--accent-color),
+                 -0.05em -0.025em 0 #ff00ff;
+    animation: glitch 1s infinite;
 }
 
-main {
+.subtitle {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: var(--accent-color);
+    letter-spacing: 0.2em;
+}
+
+.floating-nav {
+    position: fixed;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.floating-nav ul {
+    list-style: none;
+}
+
+.floating-nav a {
+    display: block;
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    line-height: 1rem;
+    transition: all 0.3s ease;
+}
+
+.floating-nav a:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.project-section {
+    padding: 5rem 2rem;
     max-width: 1200px;
-    margin: 80px auto 0;
-    padding: 2rem;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    font-family: 'Courier New', monospace;
 }
 
 .project-card {
     background: var(--card-background);
-    border-radius: 12px;
+    border-radius: 15px;
     padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
 .typography-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
-.system-card {
+.typo-card {
     background: var(--card-background);
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.system-image {
-    margin: 1rem 0;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.system-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.expand-btn {
-    cursor: pointer;
-    color: var(--accent-color);
-    font-size: 1.5rem;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
-.expand-btn:hover {
+.typo-card:hover {
+    transform: translateY(-5px);
+}
+
+.typo-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.typo-image {
+    margin: 1rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.typo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.expand-icon {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.expand-icon:hover {
     transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-    .main-nav ul {
-        flex-direction: column;
-        align-items: center;
+.content {
+    position: relative;
+}
+
+.content.expanded {
+    max-height: none;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--primary-color);
+    color: white;
+}
+
+footer .fa-heart {
+    color: var(--accent-color);
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 var(--accent-color),
+                     -0.05em -0.025em 0 #ff00ff;
     }
-    
+    14% {
+        text-shadow: 0.05em 0 0 var(--accent-color),
+                     -0.05em -0.025em 0 #ff00ff;
+    }
+    15% {
+        text-shadow: -0.05em -0.025em 0 var(--accent-color),
+                     0.025em 0.025em 0 #ff00ff;
+    }
+    49% {
+        text-shadow: -0.05em -0.025em 0 var(--accent-color),
+                     0.025em 0.025em 0 #ff00ff;
+    }
+    /* Completing the glitch animation */
+@keyframes glitch {
+    50% {
+        text-shadow: 0.05em 0 0 var(--accent-color),
+                     0.025em 0.025em 0 #ff00ff;
+    }
+    99% {
+        text-shadow: 0.025em 0.05em 0 var(--accent-color),
+                     0.05em 0 0 #ff00ff;
+    }
+    100% {
+        text-shadow: -0.025em 0 0 var(--accent-color),
+                     -0.025em -0.025em 0 #ff00ff;
+    }
+}
+
+/* Animation for cards */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* Reflection section styles */
+.reflection-section .content {
+    max-height: 150px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.reflection-section .content.expanded {
+    max-height: 2000px;
+}
+
+/* Additional Typography Card Styles */
+.typo-card p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+    }
+
+    .glitch {
+        font-size: 2.5rem;
+    }
+
+    .floating-nav {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        transform: none;
+    }
+
+    .floating-nav ul {
+        display: flex;
+        justify-content: space-around;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 1rem;
+    }
+
+    .floating-nav a {
+        margin: 0;
+    }
+
+    .project-section {
+        padding: 3rem 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
     .typography-grid {
         grid-template-columns: 1fr;
+    }
+
+    .typo-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .glitch {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .floating-nav {
+        display: none;
+    }
+
+    .hero {
+        height: auto;
+        padding: 2rem;
+    }
+
+    .project-card {
+        break-inside: avoid;
+        box-shadow: none;
+    }
+
+    .typo-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+    }
+}
+
+/* Accessibility improvements */
+.floating-nav a:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .typo-card:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    :root {
+        --accent-color: #00cc00;
+        --text-color: #000000;
+        --background-color: #ffffff;
+    }
+
+    .typo-card {
+        border: 2px solid #000;
     }
 }

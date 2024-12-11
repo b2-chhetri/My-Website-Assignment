@@ -8,9 +8,7 @@
     --text-color: #000000;             /* Black text */
     --background-color: #ffffff;        /* White background */
     --card-background: #ffffff;
-    --shadow-default: 0 10px 30px rgba(0, 0, 0, 0.1);
-    --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --transition-default: all 0.3s ease;
+  
 }
 
 /* Reset */

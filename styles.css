@@ -2,10 +2,11 @@
 
 /* Custom Properties */
 :root {
-    --primary-color: #2a2a2a;
+   :root {
+    --primary-color: #333333;          /* For other elements */
     --accent-color: #00ff9d;
-    --text-color: #333;
-    --background-color: #f4f4f4;
+    --text-color: #000000;             /* Black text */
+    --background-color: #ffffff;        /* White background */
     --card-background: #ffffff;
     --shadow-default: 0 10px 30px rgba(0, 0, 0, 0.1);
     --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -29,8 +30,8 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
-    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+      height: 100vh;
+    background: var(--background-color);  /* Changed to white */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,24 +41,24 @@ body {
 }
 
 .hero-content {
-    color: white;
+  color: var(--text-color);  /* Changed to black */
     z-index: 1;
 }
 
 .glitch {
-    font-size: 4rem;
+     font-size: 4rem;
     font-weight: bold;
     text-transform: uppercase;
     position: relative;
-    text-shadow: 0.05em 0 0 var(--accent-color),
-                 -0.05em -0.025em 0 #ff00ff;
-    animation: glitch 1s infinite;
+    color: var(--text-color);          /* Ensure text is black */
+    text-shadow: 0.05em 0 0 #00ff9d,   /* Keep the glitch effect but adjusted */
+                -0.05em -0.025em 0 #ff00ff;
 }
 
 .subtitle {
     font-size: 1.5rem;
     margin-top: 1rem;
-    color: var(--accent-color);
+    color: var(--primary-color);       /* Darker color for subtitle */
     letter-spacing: 0.2em;
 }
 

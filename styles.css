@@ -1,25 +1,33 @@
-// styles.css
+/* styles.css */
+
+/* Custom Properties */
 :root {
     --primary-color: #2a2a2a;
     --accent-color: #00ff9d;
     --text-color: #333;
     --background-color: #f4f4f4;
     --card-background: #ffffff;
+    --shadow-default: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition-default: all 0.3s ease;
 }
 
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Base Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Futura PT', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
 }
 
+/* Hero Section */
 .hero {
     height: 100vh;
     background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
@@ -53,222 +61,7 @@ body {
     letter-spacing: 0.2em;
 }
 
-.floating-nav {
-    position: fixed;
-    top: 50%;
-    right: 2rem;
-    transform: translateY(-50%);
-    z-index: 100;
-}
-
-.floating-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-.floating-nav a {
-    display: block;
-    color: var(--primary-color);
-    text-decoration: none;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-    text-align: center;
-    line-height: 1rem;
-    transition: all 0.3s ease;
-}
-
-.floating-nav a:hover {
-    background: var(--accent-color);
-    color: white;
-    transform: scale(1.1);
-}
-
-.project-section {
-    padding: 5rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: var(--primary-color);
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.project-card {
-    background: var(--card-background);
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.content {
-    position: relative;
-    padding-right: 3rem;
-}
-
-.expand-icon {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-    color: var(--accent-color);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.expand-icon:hover {
-    transform: translateY(-50%) scale(1.2);
-}
-
-.reflection-section .content {
-    max-height: 150px;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-.reflection-section .content.expanded {
-    max-height: 2000px;
-}
-
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: var(--primary-color);
-    color: white;
-}
-
-footer .fa-heart {
-    color: var(--accent-color);
-}
-
-@keyframes glitch {
-    0% {
-        text-shadow: 0.05em 0 0 var(--accent-color),
-                     -0.05em -0.025em 0 #ff00ff;
-    }
-    14% {
-        text-shadow: 0.05em 0 0 var(--accent-color),
-                     -0.05em -0.025em 0 #ff00ff;
-    }
-    15% {
-        text-shadow: -0.05em -0.025em 0 var(--accent-color),
-                     0.025em 0.025em 0 #ff00ff;
-    }
-    49% {
-        text-shadow: -0.05em -0.025em 0 var(--accent-color),
-                     0.025em 0.025em 0 #ff00ff;
-    }
-    50% {
-        text-shadow: 0.025em 0.05em 0 var(--accent-color),
-                     0.05em 0 0 #ff00ff;
-    }
-    99% {
-        text-shadow: 0.025em 0.05em 0 var(--accent-color),
-                     0.05em 0 0 #ff00ff;
-    }
-    100% {
-        text-shadow: -0.025em 0 0 var(--accent-color),
-                     -0.025em -0.025em 0 #ff00ff;
-    }
-}
-
-@media (max-width: 768px) {
-    .floating-nav {
-        position: fixed;
-        top: auto;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        transform: none;
-    }
-
-    .floating-nav ul {
-        display: flex;
-        justify-content: space-around;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 1rem;
-    }
-
-    .floating-nav a {
-        margin: 0;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .glitch {
-        font-size: 2.5rem;
-    }
-}
-
-:root {
-    --primary-color: #2a2a2a;
-    --accent-color: #00ff9d;
-    --text-color: #333;
-    --background-color: #f4f4f4;
-    --card-background: #ffffff;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Futura PT', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
-}
-
-.hero {
-    height: 100vh;
-    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-content {
-    color: white;
-    z-index: 1;
-}
-
-.glitch {
-    font-size: 4rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    position: relative;
-    text-shadow: 0.05em 0 0 var(--accent-color),
-                 -0.05em -0.025em 0 #ff00ff;
-    animation: glitch 1s infinite;
-}
-
-.subtitle {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    color: var(--accent-color);
-    letter-spacing: 0.2em;
-}
-
+/* Navigation */
 .floating-nav {
     position: fixed;
     top: 50%;
@@ -293,7 +86,7 @@ body {
     height: 3rem;
     text-align: center;
     line-height: 1rem;
-    transition: all 0.3s ease;
+    transition: var(--transition-default);
 }
 
 .floating-nav a:hover {
@@ -302,6 +95,12 @@ body {
     transform: scale(1.1);
 }
 
+.floating-nav a:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Project Sections */
 .project-section {
     padding: 5rem 2rem;
     max-width: 1200px;
@@ -316,18 +115,20 @@ body {
     font-family: 'Courier New', monospace;
 }
 
-.project-card {
+/* Cards */
+.project-card, .typo-card {
     background: var(--card-background);
     border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-default);
+    transition: var(--transition-default);
 }
 
-.project-card:hover {
+.project-card:hover, .typo-card:hover {
     transform: translateY(-5px);
 }
 
+/* Typography Grid */
 .typography-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -336,21 +137,22 @@ body {
 }
 
 .typo-card {
-    background: var(--card-background);
-    border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.typo-card:hover {
-    transform: translateY(-5px);
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
 }
 
 .typo-card h3 {
     color: var(--accent-color);
     margin-bottom: 1rem;
     font-size: 1.2rem;
+}
+
+.typo-card p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-top: 1rem;
 }
 
 .typo-image {
@@ -366,26 +168,34 @@ body {
     object-fit: cover;
 }
 
+/* Content and Expansion */
+.content {
+    position: relative;
+}
+
 .expand-icon {
     text-align: center;
     margin-top: 2rem;
     color: var(--accent-color);
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: var(--transition-default);
 }
 
 .expand-icon:hover {
     transform: scale(1.1);
 }
 
-.content {
-    position: relative;
+.reflection-section .content {
+    max-height: 150px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
 }
 
-.content.expanded {
-    max-height: none;
+.reflection-section .content.expanded {
+    max-height: 2000px;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 2rem;
@@ -397,30 +207,17 @@ footer .fa-heart {
     color: var(--accent-color);
 }
 
+/* Animations */
 @keyframes glitch {
-    0% {
+    0%, 14% {
         text-shadow: 0.05em 0 0 var(--accent-color),
                      -0.05em -0.025em 0 #ff00ff;
     }
-    14% {
-        text-shadow: 0.05em 0 0 var(--accent-color),
-                     -0.05em -0.025em 0 #ff00ff;
-    }
-    15% {
+    15%, 49% {
         text-shadow: -0.05em -0.025em 0 var(--accent-color),
                      0.025em 0.025em 0 #ff00ff;
     }
-    49% {
-        text-shadow: -0.05em -0.025em 0 var(--accent-color),
-                     0.025em 0.025em 0 #ff00ff;
-    }
-    /* Completing the glitch animation */
-@keyframes glitch {
-    50% {
-        text-shadow: 0.05em 0 0 var(--accent-color),
-                     0.025em 0.025em 0 #ff00ff;
-    }
-    99% {
+    50%, 99% {
         text-shadow: 0.025em 0.05em 0 var(--accent-color),
                      0.05em 0 0 #ff00ff;
     }
@@ -430,7 +227,6 @@ footer .fa-heart {
     }
 }
 
-/* Animation for cards */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -444,25 +240,6 @@ footer .fa-heart {
 
 .fade-in {
     animation: fadeIn 0.6s ease forwards;
-}
-
-/* Reflection section styles */
-.reflection-section .content {
-    max-height: 150px;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-}
-
-.reflection-section .content.expanded {
-    max-height: 2000px;
-}
-
-/* Additional Typography Card Styles */
-.typo-card p {
-    color: #666;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-top: 1rem;
 }
 
 /* Media Queries */
@@ -526,7 +303,32 @@ footer .fa-heart {
     }
 }
 
-/* Print styles */
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .typo-card:hover,
+    .project-card:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-contrast: high) {
+    :root {
+        --accent-color: #00cc00;
+        --text-color: #000000;
+        --background-color: #ffffff;
+    }
+
+    .typo-card {
+        border: 2px solid #000;
+    }
+}
+
+/* Print Styles */
 @media print {
     .floating-nav {
         display: none;
@@ -537,44 +339,10 @@ footer .fa-heart {
         padding: 2rem;
     }
 
-    .project-card {
-        break-inside: avoid;
-        box-shadow: none;
-    }
-
+    .project-card,
     .typo-card {
         break-inside: avoid;
         page-break-inside: avoid;
         box-shadow: none;
-    }
-}
-
-/* Accessibility improvements */
-.floating-nav a:focus {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none !important;
-        transition: none !important;
-    }
-
-    .typo-card:hover {
-        transform: none;
-    }
-}
-
-/* High contrast mode */
-@media (prefers-contrast: high) {
-    :root {
-        --accent-color: #00cc00;
-        --text-color: #000000;
-        --background-color: #ffffff;
-    }
-
-    .typo-card {
-        border: 2px solid #000;
     }
 }

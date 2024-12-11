@@ -3,249 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Design Journey</title>
+    <title>Design Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="hero">
-        <div class="hero-content">
-            <h1 class="glitch" data-text="Design Explorer">Design Explorer</h1>
-            <p class="subtitle">A Journey Through Digital Creativity</p>
-        </div>
-    </header>
-
-    <nav class="floating-nav">
+    <nav class="main-nav">
         <ul>
-            <li><a href="#html-project">HTML</a></li>
-            <li><a href="#carp-project">CARP</a></li>
-            <li><a href="#typography-project">Type</a></li>
-            <li><a href="#reflection">Journey</a></li>
+            <li><a href="#html-project">HTML Project</a></li>
+            <li><a href="#carp-project">CARP Project</a></li>
+            <li><a href="#typography-project">Typography</a></li>
+            <li><a href="#reflection">Reflection</a></li>
         </ul>
     </nav>
 
     <main>
-        <section id="html-project" class="project-section">
-            <h2 class="section-title">&lt;HTML_Journey/&gt;</h2>
-            <div class="project-card">
-                <div class="content">
-                    <p>Diving into the world of web development opened new horizons. Through hands-on experience with HTML5 and CSS Grid, I discovered the art of creating responsive layouts that adapt seamlessly across devices. Git became my trusted companion, teaching me the value of organized development and collaboration.</p>
-                    <div class="expand-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                </div>
+        <!-- HTML Project -->
+        <section id="html-project" class="project-card">
+            <h2>HTML/GitHub Project</h2>
+            <div class="content">
+                <p>Exploration of modern web development techniques and version control systems. Through practical application, gained proficiency in semantic HTML5 elements and responsive design principles.</p>
+                <i class="fas fa-code expand-btn"></i>
             </div>
         </section>
 
-        <section id="carp-project" class="project-section">
-            <h2 class="section-title">CARP_Design{}</h2>
-            <div class="project-card">
-                <div class="content">
-                    <p>Exploring the fundamentals of design through CARP principles transformed my approach to visual communication. Each element became a building block in creating harmonious layouts, where contrast creates emphasis, alignment brings order, repetition builds rhythm, and proximity guides the eye through information.</p>
-                    <div class="expand-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                </div>
+        <!-- CARP Project -->
+        <section id="carp-project" class="project-card">
+            <h2>CARP Project</h2>
+            <div class="content">
+                <p>Deep dive into foundational design principles through Contrast, Alignment, Repetition, and Proximity, creating cohesive visual hierarchies and engaging layouts.</p>
+                <i class="fas fa-palette expand-btn"></i>
             </div>
         </section>
 
-      <section id="typography-systems" class="project-section">
-    <h2 class="section-title">Typography_Systems.exe</h2>
-    
-    <div class="typography-grid">
-        <!-- 1. Axial System -->
-        <div class="typo-card">
-            <div class="typo-header">
-                <h3>Axial System</h3>
-                <i class="fas fa-arrows-alt-h"></i>
-            </div>
-            <div class="typo-example">
-                <div class="axial-layout">
-                    <span class="title">RINKO KAWAUCHI</span>
-                    <span class="subtitle">AT THE EDGE OF THE</span>
-                    <span class="subtitle-2">EVERYDAY WORLD</span>
-                    <span class="details">ARNOLFINI CENTRE</span>
+        <!-- Typography Systems -->
+        <section id="typography-project" class="project-card">
+            <h2>Typography Systems</h2>
+            <div class="typography-grid">
+                <!-- Axial System -->
+                <div class="system-card">
+                    <h3>Axial System</h3>
+                    <div class="system-image">
+                        <img src="path-to-axial-image.jpg" alt="Axial Typography Example">
+                    </div>
+                    <p>Organizes content along a single axis, creating dynamic visual flow while maintaining readability.</p>
                 </div>
-            </div>
-            <p class="typo-description">
-                Content arranged along a single axis, creating a dynamic flow. I used diagonal 
-                alignment to reflect the artistic journey, emphasizing the exhibition title with 
-                increased size and weight.
-            </p>
-        </div>
 
-        <!-- 2. Radial System -->
-        <div class="typo-card">
-            <div class="typo-header">
-                <h3>Radial System</h3>
-                <i class="fas fa-circle-notch"></i>
-            </div>
-            <div class="typo-example">
-                <div class="radial-layout">
-                    <div class="center-text">EDGE</div>
-                    <svg viewBox="0 0 200 200">
-                        <path id="circle-text" d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
-                        <text>
-                            <textPath href="#circle-text">OF THE EVERYDAY WORLD • KAWAUCHI</textPath>
-                        </text>
-                    </svg>
+                <!-- Radial System -->
+                <div class="system-card">
+                    <h3>Radial System</h3>
+                    <div class="system-image">
+                        <img src="path-to-radial-image.jpg" alt="Radial Typography Example">
+                    </div>
+                    <p>Arranges text in circular patterns, radiating from a central point for dynamic visual interest.</p>
                 </div>
-            </div>
-            <p class="typo-description">
-                Text radiates from a central point in circular patterns, representing the cyclical 
-                nature of everyday moments in Kawauchi's work. The rotating text creates perpetual 
-                movement.
-            </p>
-        </div>
 
-        <!-- 3. Dilatational System -->
-        <div class="typo-card">
-            <div class="typo-header">
-                <h3>Dilatational System</h3>
-                <i class="fas fa-expand-arrows-alt"></i>
-            </div>
-            <div class="typo-example">
-                <div class="dilatational-layout">
-                    <span class="center">EDGE</span>
-                    <span class="layer-1">OF THE</span>
-                    <span class="layer-2">EVERYDAY</span>
-                    <span class="layer-3">WORLD</span>
-                </div>
-            </div>
-            <p class="typo-description">
-                Text expands from a central point, creating depth and perspective. The expanding 
-                arrangement mirrors how personal moments grow into universal experiences in 
-                Kawauchi's photography.
-            </p>
-        </div>
+                <!-- Remaining systems following the same pattern -->
+                <!-- Add the other 6 typography systems here -->
 
-        <!-- 4. Random System -->
-        <div class="typo-card">
-            <div class="typo-header">
-                <h3>Random System</h3>
-                <i class="fas fa-random"></i>
             </div>
-            <div class="typo-example">
-                <div class="random-layout">
-                    <span class="float-1">EDGE</span>
-                    <span class="float-2">EVERYDAY</span>
-                    <span class="float-3">WORLD</span>
-                    <span class="float-4">KAWAUCHI</span>
-                </div>
-            </div>
-            <p class="typo-description">
-                Controlled chaos in typography, reflecting the spontaneous nature of everyday 
-                moments. The seemingly random placement maintains visual balance while breaking 
-                traditional grid constraints.
-            </p>
-        </div>
+        </section>
 
-        <!-- 5. Grid System -->
-        <div class="typo-card">
-            <div class="typo-header">
-                <h3>Grid System</h3>
-                <i class="fas fa-th"></i>
-            </div>
-            <div class="typo-example">
-                <div class="grid-layout">
-                    <div class="grid-item title">RINKO</div>
-                    <div class="grid-item subtitle">KAWAUCHI</div>
-                    <div class="grid-item details">OCT 2024</div>
-                    <div class="grid-item details">FEB 2025</div>
-                </div>
-            </div>
-            <p class="typo-description">
-                Structured arrangement using a modular grid system. The clean, organized layout 
-                provides clear hierarchy while maintaining professional presentation of exhibition 
-                details.
-            </p>
-        </div>
-
-        <!-- 6. Modular System -->
-        <div class="typo-card">
-            <div class="typo-header">
-                <h3>Modular System</h3>
-                <i class="fas fa-cube"></i>
-            </div>
-            <div class="typo-example">
-                <div class="modular-layout">
-                    <div class="module">EDGE</div>
-                    <div class="module">OF</div>
-                    <div class="module">THE</div>
-                    <div class="module">WORLD</div>
-                </div>
-            </div>
-            <p class="typo-description">
-                Text arranged in repeating units, creating rhythm through consistent shapes and 
-                spacing. Each module contains exhibition information, forming a cohesive pattern.
-            </p>
-        </div>
-
-        <!-- 7. Transitional System -->
-        <div class="typo-card">
-            <div class="typo-header">
-                <h3>Transitional System</h3>
-                <i class="fas fa-stream"></i>
-            </div>
-            <div class="typo-example">
-                <div class="transitional-layout">
-                    <span class="trans-1">EDGE</span>
-                    <span class="trans-2">OF THE</span>
-                    <span class="trans-3">EVERYDAY</span>
-                    <span class="trans-4">WORLD</span>
-                </div>
-            </div>
-            <p class="typo-description">
-                Typography transitions through size and weight changes, creating visual flow. 
-                The gradual transformation reflects the exhibition's exploration of evolving 
-                moments.
-            </p>
-        </div>
-
-        <!-- 8. Bilateral System -->
-        <div class="typo-card">
-            <div class="typo-header">
-                <h3>Bilateral System</h3>
-                <i class="fas fa-equals"></i>
-            </div>
-            <div class="typo-example">
-                <div class="bilateral-layout">
-                    <div class="left-side">EDGE OF</div>
-                    <div class="center">THE</div>
-                    <div class="right-side">EVERYDAY</div>
-                </div>
-            </div>
-            <p class="typo-description">
-                Symmetrical arrangement creating perfect balance through mirrored elements. 
-                The balanced composition emphasizes the duality present in Kawauchi's work.
-            </p>
-        </div>
-    </div>
-</section>
-
-        <section id="reflection" class="project-section reflection-section">
-            <h2 class="section-title">Design_Journey.log</h2>
-            <div class="project-card">
-                <div class="content">
-                   <p>My journey through design fundamentals has been nothing short of transformative. Over the course of this exploration, I've discovered that design is not just about creating visually appealing interfaces—it's about crafting experiences that bridge the gap between human needs and digital solutions. This realization has fundamentally changed my approach to every project I undertake.</p>
-
-                    <p>The beginning of my journey with HTML and web development felt like learning a new language. Initially overwhelming, the syntax and structure gradually revealed their beauty as I began to understand how each element contributed to the larger picture. The excitement of seeing my first responsive design adapt seamlessly across different screens was unparalleled. This technical foundation proved invaluable, teaching me that behind every polished interface lies a carefully constructed framework of code.</p>
-
-                    <p>As I delved into CARP principles, I began to see design through a new lens. What once seemed like arbitrary choices in layout and composition became strategic decisions backed by proven design theory. Contrast taught me to guide attention, alignment brought structure to chaos, repetition created rhythm and familiarity, while proximity helped organize information into digestible chunks. These principles transformed my understanding of visual hierarchy and user experience.</p>
-
-                    <p>The typography module opened my eyes to the subtle art of communication through font choice and spacing. I discovered that typography is the voice of design, capable of conveying emotion, establishing brand identity, and enhancing readability. The challenge of balancing aesthetic appeal with functional clarity pushed me to think deeply about every typographic decision. This exploration of type systems and hierarchies showed me how minute details can dramatically impact user engagement.</p>
-
-                    <p>Working across these different areas has taught me that great design exists at the intersection of technical skill, artistic intuition, and user empathy. Each project has been a building block in developing a holistic approach to design. I've learned to embrace the iterative nature of the creative process, understanding that first attempts rarely yield perfect results, but each revision brings improvements and new insights.</p>
-
-                    <p>Looking ahead, I'm excited by the endless possibilities for growth in this field. The foundation I've built through these projects has equipped me with both technical skills and design sensibilities, but I recognize that this is just the beginning. The rapid evolution of digital design means there will always be new techniques to master, tools to explore, and problems to solve. I'm particularly keen to delve deeper into interaction design and animation, areas where I believe the principles I've learned can be applied in exciting new ways.</p>
-                    
-                   
-                </div>
+        <!-- Reflection -->
+        <section id="reflection" class="project-card">
+            <h2>Reflection</h2>
+            <div class="content">
+                <p class="reflection-text">
+                    [Your 500-word reflection goes here]
+                </p>
+                <i class="fas fa-book expand-btn"></i>
             </div>
         </section>
     </main>
 
-    
+    <footer>
+        <p>© 2024 Designed by [Your Name]</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

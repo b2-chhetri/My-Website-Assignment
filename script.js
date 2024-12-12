@@ -82,16 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         const currentScrollPosition = window.pageYOffset;
         
-        // Show/hide navigation based on scroll direction
         if (currentScrollPosition > lastScrollPosition) {
-            floatingNav.style.transform = 'translateY(-100%)';
+            floatingNav.style.transform = 'translate(-50%, -100%)';
         } else {
-            floatingNav.style.transform = 'translateY(0)';
+            floatingNav.style.transform = 'translate(-50%, 0)';
         }
         
-        // Hide navigation at the top of the page
         if (currentScrollPosition < 100) {
-            floatingNav.style.transform = 'translateY(-100%)';
+            floatingNav.style.transform = 'translate(-50%, -100%)';
         }
         
         lastScrollPosition = currentScrollPosition;
@@ -110,61 +108,4 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
         });
     });
-
-    // Add loading animation for images
-    const images = document.querySelectorAll('.film-festival-image');
-    
-    images.forEach(img => {
-        // If image is already loaded
-        if (img.complete) {
-            img.classList.add('loaded');
-        }
-        
-        // For images that load after DOMContentLoaded
-        img.addEventListener('load', () => {
-            img.classList.add('loaded');
-        });
-        
-        // If image fails to load
-        img.addEventListener('error', () => {
-            console.error('Failed to load image:', img.src);
-        });
-    });
-
-    // Force images to be visible after a short delay as fallback
-    setTimeout(() => {
-        images.forEach(img => {
-            if (!img.classList.contains('loaded')) {
-                img.classList.add('loaded');
-            }
-        });
-    }, 1000);
-// Add corresponding CSS classes in your styles.css:
-/*
-.fade-in {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.project-card {
-    transition: all 0.3s ease;
-}
-
-.project-card.expanded {
-    transform: scale(1.02);
-}
-
-.floating-nav {
-    transition: transform 0.3s ease;
-}
-
-img {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-img.loaded {
-    opacity: 1;
-}
-*/
+});

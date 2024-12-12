@@ -239,7 +239,12 @@ body {
     margin-bottom: 1.5rem;
     line-height: 1.8;
 }
-
+.film-festival-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
 /* Animations */
 .fade-in {
     opacity: 1 !important;

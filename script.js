@@ -112,14 +112,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Add loading animation for images
-    const images = document.querySelectorAll('img');
+    const images = document.querySelectorAll('.film-festival-image');
+    
     images.forEach(img => {
+        // If image is already loaded
+        if (img.complete) {
+            img.classList.add('loaded');
+        }
+        
+        // For images that load after DOMContentLoaded
         img.addEventListener('load', () => {
             img.classList.add('loaded');
         });
+        
+        // If image fails to load
+        img.addEventListener('error', () => {
+            console.error('Failed to load image:', img.src);
+        });
     });
-});
 
+    // Force images to be visible after a short delay as fallback
+    setTimeout(() => {
+        images.forEach(img => {
+            if (!img.classList.contains('loaded')) {
+                img.classList.add('loaded');
+            }
+        });
+    }, 1000);
 // Add corresponding CSS classes in your styles.css:
 /*
 .fade-in {

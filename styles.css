@@ -400,3 +400,25 @@ img.loaded {
     line-height: 1.6;
     margin-top: 1rem;
 }
+.film-festival-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+    opacity: 1; /* Default to visible */
+    transition: opacity 0.3s ease;
+}
+
+/* Remove the general img opacity: 0 rule or override it */
+.film-festival-image {
+    opacity: 1 !important;
+}
+
+/* Debug styles to check if containers are rendering */
+.film-festival-visual {
+    min-height: 200px; /* Minimum height to see if container is present */
+    background-color: #f5f5f5; /* Light background to see container */
+    margin: 1rem 0;
+    border: 1px solid #ddd; /* Border to see boundaries */
+}
